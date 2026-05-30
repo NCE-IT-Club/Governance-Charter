@@ -1,0 +1,271 @@
+\documentclass[12pt,a4paper]{article}
+
+% ============================================
+% PACKAGES
+% ============================================
+\usepackage[utf8]{inputenc}
+\usepackage[lmargin=1in,rmargin=0.5in,tmargin=1in,bmargin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+\usepackage{parskip}
+
+% DISABLE HYPHENATION
+\usepackage[none]{hyphenat}
+\sloppy
+
+% Define colors - Black and white only
+\definecolor{black}{RGB}{0,0,0}
+
+% Header and Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textit{NCE IT Club}}
+\fancyhead[R]{\small\textit{\rightmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Customize section marks to show article/section names
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\renewcommand{\subsectionmark}[1]{}
+
+% Section formatting with color only in headings
+\titleformat{\section}
+{\Large\bfseries\color{black}}
+{}
+{0em}
+{}
+[\titlerule]
+
+\titleformat{\subsection}
+{\large\bfseries}
+{}
+{0em}
+{}
+
+\titleformat{\subsubsection}
+{\normalsize\bfseries}
+{}
+{0em}
+{}
+
+% Hyperlink setup - black for printing
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    citecolor=black,
+    bookmarks=true,
+    bookmarksnumbered=true,
+    pdftitle={Governance Charter of the NCE IT Club},
+    pdfauthor={NCE IT Club},
+    pdfsubject={Official Governing Document}
+}
+
+% Custom commands
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+% Custom legislative numbering commands
+% Article numbering (Roman numerals)
+\newcounter{article}
+\renewcommand{\thearticle}{\Roman{article}}
+
+% Section numbering within articles
+\newcounter{sectionnum}[article]
+\renewcommand{\thesectionnum}{\arabic{sectionnum}}
+
+% Custom Article command
+\newcommand{\article}[1]{%
+    \stepcounter{article}%
+    \section*{Article \thearticle: #1}%
+    \sectionmark{Article \thearticle: #1}%
+    \addcontentsline{toc}{section}{Article \thearticle: #1}%
+}
+
+% Custom Section command
+\newcommand{\gsection}[1]{%
+    \stepcounter{sectionnum}%
+    \subsection*{Section \thesectionnum: #1}%
+}
+
+% Custom Clause command (alphabetical)
+\newcommand{\clause}{%
+    \refstepcounter{enumi}%
+    \item[\alph{enumi})]%
+}
+
+% Sub-clause command (roman numerals)
+\newcommand{\subclause}{%
+    \refstepcounter{enumii}%
+    \item[\roman{enumii}.]%
+}
+
+% Justify text properly
+\justifying
+
+% TOC formatting
+\renewcommand{\cftsecfont}{\bfseries\color{black}}
+\renewcommand{\cftsecpagefont}{\bfseries}
+\renewcommand{\cftsubsecindent}{1.5em}
+\setlength{\cftbeforesecskip}{0.5em}
+
+% ============================================
+% DOCUMENT BEGINS
+% ============================================
+\begin{document}
+
+% ============================================
+% COVER PAGE
+% ============================================
+\begin{titlepage}
+    \center
+    
+    % Logo
+    \includegraphics[width=6cm]{logo.png}\\[2cm]
+    
+    % Title
+    {\Huge \bfseries GOVERNANCE CHARTER}\\[0.8cm]
+    {\LARGE of the}\\[0.8cm]
+    {\huge \bfseries NCE IT CLUB}\\[2.5cm]
+    
+    \HRule \\[0.4cm]
+    
+    {\large \textit{Official Governing Framework}}\\[0.4cm]
+    
+    \HRule \\[3cm]
+    
+    \vfill
+    
+    % Footer information
+    \begin{minipage}{0.45\textwidth}
+        \begin{flushleft}
+            \textbf{Enacted:}\\
+            Jestha 13, 2083 B.S.\\
+            (May 27, 2026 A.D.)
+        \end{flushleft}
+    \end{minipage}
+    ~
+    \begin{minipage}{0.45\textwidth}
+        \begin{flushright}
+            \textbf{Status:} Active
+        \end{flushright}
+    \end{minipage}
+    
+    \vspace{0.5cm}
+    
+\end{titlepage}
+
+% ============================================
+% DOCUMENT INFORMATION PAGE
+% ============================================
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{Document Information}
+\thispagestyle{empty}
+
+\section*{Document Information}
+
+\begin{tabular}{@{}p{4cm}p{10cm}@{}}
+    \textbf{Document Title:} & Governance Charter of the NCE IT Club \\[0.5em]
+    \textbf{Organization:} & NCE IT Club \\[0.5em]
+    \textbf{Parent Institution:} & National College of Engineering (NCE) \\[0.5em]
+    \textbf{Department:} & Electronics and Computer Engineering \\[0.5em]
+    \textbf{Document Type:} & Official Governing Document \\[0.5em]
+    \textbf{Effective Date:} & Jestha 13, 2083 B.S. (May 27, 2026 A.D.) \\[0.5em]
+    \textbf{Version:} & 1.0 \\[0.5em]
+    \textbf{Status:} & Active and Enforceable \\[0.5em]
+    \textbf{Previous Version:} & Interim Draft IV \\[0.5em]
+    \textbf{Last Amended:} & Not Amended \\[0.5em]
+    \textbf{Tentative Review:} & Jestha 2084 B.S. (May 2027 A.D.) \\
+\end{tabular}
+
+\vspace{1.5cm}
+
+\noindent\textbf{Authority:}
+
+This Governance Charter has been officially adopted by the NCE IT Club under the joint attestation of President Shlok Pandey and Er.~Suroj Burlakoti, Head of the Department of Electronics and Computer Engineering. It builds upon the initial framework (Interim Draft IV) prepared during the tenure of President Prayash Niraula on Jestha 24, 2082 B.S.
+
+\vspace{0.8cm}
+
+\noindent\textbf{Scope:}
+
+This document establishes the organizational structure, operational procedures, membership requirements, and governing rules of the NCE IT Club. It defines the rights and responsibilities of all members, the authority and duties of elected officers, the processes for decision-making and governance, and the standards of conduct expected of all participants. It serves as the primary framework for all club activities and operations.
+
+\vspace{0.8cm}
+
+\noindent\textbf{Applicability:}
+
+All provisions of this Governance Charter are binding upon all members, officers, and representatives of the NCE IT Club. This document applies to all activities conducted under the name or authority of the Club, whether held on or off campus. All individuals who hold membership in the Club, whether active or in any other capacity, are required to adhere to the principles and procedures outlined herein. The Club reserves the right to interpret and enforce these provisions in accordance with its governance authority.
+
+% ============================================
+% TABLE OF CONTENTS
+% ============================================
+\newpage
+\tableofcontents
+\newpage
+
+% ============================================
+% MISSION
+% ============================================
+\input{articles/mission}
+\newpage
+% ============================================
+% VISION
+% ============================================
+\input{articles/vision}
+\newpage
+\input{articles/preamble}
+\newpage
+% ============================================
+% ARTICLE I: CLUB IDENTITY, PURPOSE, ASSETS & FACILITIES
+% ============================================
+\input{articles/article1}
+\newpage
+% ============================================
+% ARTICLE II: MEMBERSHIP
+% ============================================
+\input{articles/article2}
+\newpage
+% ============================================
+% ARTICLE III: ORGANIZATIONAL STRUCTURE & LEADERSHIP
+% ============================================
+\input{articles/article3}
+\newpage
+% ============================================
+% ARTICLE IV: MEETINGS & DECISION-MAKING
+% ============================================
+\input{articles/article4}
+\newpage
+% ============================================
+% ARTICLE V: FINANCIAL MANAGEMENT
+% ============================================
+\input{articles/article5}
+\newpage
+% ============================================
+% ARTICLE VI: EVENTS, ACTIVITIES & PROJECTS
+% ============================================
+\input{articles/article6}
+\newpage
+% ============================================
+% ARTICLE VII: CODE OF CONDUCT & DISCIPLINARY PROCEDURES
+% ============================================
+\input{articles/article7}
+\newpage
+% ============================================
+% ARTICLE VIII: ELECTIONS, TRANSITIONS & GOVERNANCE AUTHORITY
+% ============================================
+\input{articles/article8}
+\newpage
+% ============================================
+% ATTESTATION
+% ============================================
+\input{articles/attestation}
+
+\end{document}
